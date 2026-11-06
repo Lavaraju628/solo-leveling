@@ -24,6 +24,7 @@ import confetti from 'canvas-confetti';
 import { DailyMission } from '../../types/game';
 import { EXERCISE_DEFINITIONS } from '../../data/exercises';
 import { soundEngine } from '../../services/sound';
+import sungImg from '../../assets/sung.avif';
 
 interface GuidedWorkoutModalProps {
   isOpen: boolean;
@@ -241,10 +242,11 @@ export const GuidedWorkoutModal: React.FC<GuidedWorkoutModalProps> = ({
           <div className="flex items-center gap-2.5">
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-cyan-400 p-[1px] shadow-glow-blue bg-slate-900">
               <img
-                src="/sung.avif"
+                src={sungImg}
                 alt="Sung Jin-Woo"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: dayLevel < 10 ? '12% 40%' : '50% 35%' }}
+                loading="eager"
               />
             </div>
             <div>

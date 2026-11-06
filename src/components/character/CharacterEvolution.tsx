@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Shield, Flame, Zap, Eye, ToggleLeft, ToggleRight } from 'lucide-react';
 import { useGame } from '../../context/GameContext';
 import { SHOP_ITEMS } from '../../data/shopItems';
+import sungImg from '../../assets/sung.avif';
 
 interface CharacterEvolutionProps {
   size?: 'sm' | 'md' | 'lg';
@@ -80,9 +81,9 @@ export const CharacterEvolution: React.FC<CharacterEvolutionProps> = ({
           <div className="relative w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
             {/* The Authentic Anime Artwork */}
             <motion.img
-              src="/sung.avif"
+              src={sungImg}
               alt="Sung Jin-Woo Anime Character"
-              className="w-full h-full object-cover transition-all duration-700"
+              className="w-full h-full object-cover transition-all duration-700 select-none pointer-events-none"
               style={{
                 objectPosition: imageObjectPosition,
                 filter:
@@ -93,6 +94,8 @@ export const CharacterEvolution: React.FC<CharacterEvolutionProps> = ({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
+              loading="eager"
+              onError={() => setViewMode('armory')}
             />
 
             {/* Glowing Blue Eye Overlays for Awakened Levels (Level 10+) */}

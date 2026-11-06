@@ -33,6 +33,7 @@ import { useGame } from '../../context/GameContext';
 import { DailyMission, DifficultyLevel, ExerciseType } from '../../types/game';
 import { EXERCISE_DEFINITIONS } from '../../data/exercises';
 import { soundEngine } from '../../services/sound';
+import sungImg from '../../assets/sung.avif';
 
 export const DailyMissions: React.FC = () => {
   const {
@@ -96,10 +97,11 @@ export const DailyMissions: React.FC = () => {
           <div className="relative">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-cyan-400 p-[1px] shadow-glow-blue bg-slate-900">
               <img
-                src="/sung.avif"
+                src={sungImg}
                 alt="Sung Jin-Woo"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: level < 10 ? '12% 40%' : '50% 35%' }}
+                loading="eager"
               />
             </div>
             <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-lime-400 border-2 border-[#030712] animate-pulse" />
@@ -199,10 +201,11 @@ export const DailyMissions: React.FC = () => {
             {/* Character Thumbnail like reference card */}
             <div className="hidden lg:block relative w-28 h-28 rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-glow-blue flex-shrink-0 bg-slate-950">
               <img
-                src="/sung.avif"
+                src={sungImg}
                 alt="Sung Jin-Woo Hero"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: level < 10 ? '12% 40%' : '50% 35%' }}
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#091535] via-transparent to-transparent opacity-60 pointer-events-none" />
             </div>
