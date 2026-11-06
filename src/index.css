@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f8fafc;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  /* Custom Cyber Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00d2ff;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+  }
+}
+
+/* Glowing text effects */
+.text-glow-blue {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.7);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+}
+
